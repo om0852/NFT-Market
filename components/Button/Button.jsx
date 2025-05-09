@@ -1,10 +1,15 @@
 import React from 'react'
 import Style from "./Button.module.css"
-const Button = ({btnName}) => {
+
+const Button = ({btnName, handleClick, icon, classStyle}) => {
   return (
-    <div>
+    <button 
+      className={`${Style.button} ${icon ? Style.button_icon : ''} ${classStyle ? classStyle : ''}`}
+      onClick={handleClick}
+    >
+      {icon && icon}
       {btnName}
-    </div>
+    </button>
   )
 }
 

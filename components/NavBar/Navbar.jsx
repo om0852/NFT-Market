@@ -26,14 +26,14 @@ const Navbar = () => {
       setProfile(false);
       setNotification(false);
     } else if (btnText == "Help Center") {
-      setDiscover(false);
       setHelp(true);
+      setDiscover(false);
       setProfile(false);
       setNotification(false);
     } else {
       setDiscover(false);
       setHelp(false);
-      setProfile(false);
+      setProfile(true);
       setNotification(false);
     }
   };
@@ -97,12 +97,12 @@ setOpenSideMenu((prev)=>!prev);
             )}
           </div>
           {/* Profile menu  */}
-          <div className={Style.navbar_container_right_profile}>
+          {/* <div className={Style.navbar_container_right_profile}>
             <p onClick={(e) => openMenu(e)}>Profile</p>
-            {help && (
+            {profile && (
               <div className={Style.navbar_container_right_profile_box}><Profile/></div>
             )}
-          </div>
+          </div> */}
           {/* Notifiction  */}
           <div className={Style.navbar_container_right_notify}>
             <MdNotifications
@@ -113,7 +113,7 @@ setOpenSideMenu((prev)=>!prev);
           </div>
           {/* create button section  */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnText="Create" />
+            <Button btnName="Create" />
           </div>
           {/* user profile */}
           <div className={Style.navbar_container_right_profile_box}>

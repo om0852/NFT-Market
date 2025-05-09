@@ -11,10 +11,12 @@ import {
   TiArrowSortedDown,
   TiArrowSortedUp,
 } from "react-icons/ti";
+import { MdOutlineCreate, MdOutlineAccountBalanceWallet } from "react-icons/md";
 
 import images from "../../../img/index";
 import Button from "../../Button/Button";
 import Style from "./Sidebar.module.css";
+
 const Sidebar = ({ setOpenSideMenu }) => {
   const [openHelp, setOpenHelp] = useState(false);
   const [openDiscover, setOpenDiscover] = useState(false);
@@ -95,8 +97,8 @@ const Sidebar = ({ setOpenSideMenu }) => {
       <div className={Style.sideBar_box}>
         <Image src={images.logo} alt="logo" width={150} height={150} />
         <p>
-          Discover the most outstanding articles on all topics of NFT and yout
-          own stoires and share them
+          Discover the most outstanding articles on all topics of NFT and your
+          own stories and share them
         </p>
         <div className={Style.sideBar_social}>
           <a href="#">
@@ -123,7 +125,7 @@ const Sidebar = ({ setOpenSideMenu }) => {
             onClick={() => openDiscoverMenu()}
           >
             <p>Discover</p>
-            <TiArrowSortedDown />
+            {openDiscover ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
           </div>
           {openDiscover && (
             <div className={Style.sideBar_discover}>
@@ -143,9 +145,9 @@ const Sidebar = ({ setOpenSideMenu }) => {
             onClick={() => openHelpMenu()}
           >
             <p>Help Center</p>
-            <TiArrowSortedDown />
+            {openHelp ? <TiArrowSortedUp /> : <TiArrowSortedDown />}
           </div>
-          {openHelp.amp((el, i) => (
+          {openHelp && (
             <div className={Style.sideBar_discover}>
               {helpCenter.map((el, i) => (
                 <p key={i + 1}>
@@ -153,12 +155,20 @@ const Sidebar = ({ setOpenSideMenu }) => {
                 </p>
               ))}
             </div>
-          ))}
+          )}
         </div>
       </div>
       <div className={Style.sideBar_button}>
-        <Button btnName="Create" />
-        <Button btnName="Connect Wallet" />
+        <Button 
+          btnName="Create" 
+          icon={<MdOutlineCreate style={{ marginRight: "8px" }} />}
+          handleClick={() => {}}
+        />
+        <Button 
+          btnName="Connect Wallet" 
+          icon={<MdOutlineAccountBalanceWallet style={{ marginRight: "8px" }} />}
+          handleClick={() => {}}
+        />
       </div>
     </div>
   );

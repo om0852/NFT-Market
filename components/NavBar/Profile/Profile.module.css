@@ -1,0 +1,88 @@
+.profile {
+    position: absolute;
+    padding: 2rem .5rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    width: 20rem;
+    background-color: #fff;
+    right: 0;
+    top: 4.5rem;
+    animation: slideDown 0.4s ease forwards;
+    border: 1px solid rgba(33, 129, 226, 0.1);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile_account {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.profile_account_img {
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border: 3px solid #fff;
+    transition: all 0.3s ease;
+}
+
+.profile_account_img:hover {
+    transform: scale(1.05);
+    border-color: #2181e2;
+}
+
+.profile_account_info {
+    line-height: 1.2;
+}
+
+.profile_account_info p {
+    font-weight: 600;
+    margin-bottom: .8rem;
+    color: #333;
+}
+
+.profile_account_info span {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.profile_menu {
+    padding: 1rem;
+}
+
+.profile_menu_one {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: .8rem 1.5rem;
+    transition: all .3s ease-in;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.profile_menu_one:hover {
+    background-color: rgba(33, 129, 226, 0.05);
+    cursor: pointer;
+    transform: translateX(5px);
+}
+
+.profile_menu_one:hover span {
+    color: #2181e2;
+}
+
+@media screen and (max-width: 35em) {
+    .profile {
+        width: 18rem;
+    }
+}
