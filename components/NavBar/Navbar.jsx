@@ -85,7 +85,7 @@ setOpenSideMenu((prev)=>!prev);
 
             {discover && (
               <div className={Style.navbar_container_right_discover_box}>
-                Discover
+                <Discover/>
               </div>
             )}
           </div>
@@ -93,14 +93,14 @@ setOpenSideMenu((prev)=>!prev);
           <div className={Style.navbar_container_right_help}>
             <p onClick={(e) => openMenu(e)}>Help Center</p>
             {help && (
-              <div className={Style.navbar_container_right_help_box}></div>
+              <div className={Style.navbar_container_right_help_box}><HelpCenter/></div>
             )}
           </div>
           {/* Profile menu  */}
           <div className={Style.navbar_container_right_profile}>
             <p onClick={(e) => openMenu(e)}>Profile</p>
             {help && (
-              <div className={Style.navbar_container_right_profile_box}></div>
+              <div className={Style.navbar_container_right_profile_box}><Profile/></div>
             )}
           </div>
           {/* Notifiction  */}
