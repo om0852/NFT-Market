@@ -1,8 +1,9 @@
 import Button from "./Button/Button";
 import Footer from "./Footer/Footer";
+import HeroSection from "./HeroSection/HeroSection";
 import Navbar from "./NavBar/Navbar";
+import Service from "./Service/Service";
 
 
 
-
-export {Button,Navbar,Footer};
+export {Button,Navbar,Footer,Service,HeroSection};
