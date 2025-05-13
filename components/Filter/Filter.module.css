@@ -1,0 +1,217 @@
+.filter {
+    width: 100%;
+    padding: 2rem 0;
+}
+
+.filter_box {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+}
+
+.filter_box_left {
+    display: flex;
+    gap: 1rem;
+}
+
+.filter_box_left button {
+    border: none;
+    outline: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    background: var(--bg-secondary);
+    font-weight: 500;
+    border: 1px solid rgba(33, 129, 226, 0.1);
+}
+
+.filter_box_left button:hover {
+    background: var(--primary-color);
+    color: white;
+    box-shadow: 0 5px 15px rgba(33, 129, 226, 0.2);
+    transform: translateY(-2px);
+}
+
+.filter_box_right {
+    position: relative;
+}
+
+.filter_box_right_box {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(33, 129, 226, 0.1);
+}
+
+.filter_box_right_box:hover {
+    background: rgba(33, 129, 226, 0.08);
+    transform: translateY(-2px);
+}
+
+.filter_box_right_box span {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.filter_box_right_box svg {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+/* Filter Items */
+.filter_box_items {
+    width: 80%;
+    margin: 0 auto;
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    animation: slideDown 0.3s ease forwards;
+    transform-origin: top;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: scaleY(0);
+    }
+    to {
+        opacity: 1;
+        transform: scaleY(1);
+    }
+}
+
+.filter_box_items_box {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.filter_box_items_box:last-child {
+    margin-bottom: 0;
+}
+
+.filter_box_items_box_item,
+.filter_box_items_box_item_trans {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--bg-secondary);
+    border: 1px solid rgba(33, 129, 226, 0.1);
+}
+
+.filter_box_items_box_item:hover,
+.filter_box_items_box_item_trans:hover {
+    background: rgba(33, 129, 226, 0.08);
+    transform: translateX(5px);
+}
+
+.filter_box_items_box_item span,
+.filter_box_items_box_item_trans span,
+.filter_box_items_box_item_trans small {
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filter_box_items_box_item svg,
+.filter_box_items_box_item_trans svg {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.filter_box_items_box_item_trans svg:last-child {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter_box_items_box_item_trans svg:last-child:hover {
+    color: #ff3c78;
+    transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1280px) {
+    .filter_box,
+    .filter_box_items {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .filter_box_left {
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+
+    .filter_box_left::-webkit-scrollbar {
+        height: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filter_box {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+    }
+
+    .filter_box_left {
+        width: 100%;
+    }
+
+    .filter_box_right_box {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter_box_items {
+        padding: 1.5rem;
+    }
+
+    .filter_box_items_box {
+        flex-wrap: wrap;
+    }
+
+    .filter_box_items_box_item,
+    .filter_box_items_box_item_trans {
+        width: calc(50% - 0.5rem);
+    }
+}
+
+@media screen and (max-width: 35em) {
+    .filter_box_left button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        min-width: max-content;
+    }
+
+    .filter_box_items_box_item,
+    .filter_box_items_box_item_trans {
+        width: 100%;
+        padding: 0.6rem 1rem;
+    }
+
+    .filter_box_items_box_item span,
+    .filter_box_items_box_item_trans span,
+    .filter_box_items_box_item_trans small {
+        font-size: 0.8rem;
+    }
+}
+
