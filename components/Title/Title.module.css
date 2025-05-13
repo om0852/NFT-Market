@@ -1,0 +1,131 @@
+.title {
+    width: 100%;
+    padding: 2rem 0;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(33, 129, 226, 0.1), transparent);
+}
+
+.title_box {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s ease forwards;
+}
+
+.title_box h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.title_box h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 10px;
+    animation: lineWidth 0.5s ease forwards 0.5s;
+    transform-origin: center;
+    opacity: 0;
+}
+
+.title_box p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 2rem auto 0;
+    animation: slideUp 0.5s ease forwards 0.7s;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 80px;
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .title_box {
+        width: 90%;
+    }
+    
+    .title_box h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .title_box h2 {
+        font-size: 2rem;
+    }
+    
+    .title_box p {
+        font-size: 1rem;
+        margin-top: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 35em) {
+    .title {
+        padding: 1.5rem 0;
+    }
+    
+    .title_box h2 {
+        font-size: 1.8rem;
+    }
+    
+    .title_box h2::after {
+        width: 60px;
+    }
+    
+    .title_box p {
+        font-size: 0.9rem;
+        margin-top: 1.2rem;
+    }
+}
