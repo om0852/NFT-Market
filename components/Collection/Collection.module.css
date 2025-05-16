@@ -20,13 +20,14 @@
     margin: 0 auto;
     text-align: center;
     margin-bottom: 4rem;
+    animation: fadeIn 0.5s ease forwards;
 }
 
 .collection_title h2 {
     font-size: 2.8rem;
     font-weight: 700;
-    color: #333;
-    margin-bottom: 1rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
     position: relative;
     display: inline-block;
 }
@@ -39,25 +40,68 @@
     transform: translateX(-50%);
     width: 80px;
     height: 3px;
-    background: #2181e2;
+    background: var(--primary-color);
     border-radius: 10px;
+    animation: lineWidth 0.5s ease forwards 0.3s;
+    transform-origin: center;
+    opacity: 0;
 }
 
-.collection_title p {
-    color: #666;
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    margin-top: 1.5rem;
+.collection_collections {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.collections_btn {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.collections_btn button {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 12px;
+    background: var(--bg-primary);
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--text-secondary);
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.collections_btn button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(33, 129, 226, 0.2);
+}
+
+.collections_btn button.active {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(33, 129, 226, 0.2);
+}
+
+.collections_btn button svg {
+    font-size: 1.2rem;
 }
 
 .collection_box {
     width: 80%;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 3rem;
+    animation: fadeUp 0.5s ease forwards;
 }
 
 .collection_box_single {
@@ -220,24 +264,73 @@
     margin-top: 3rem;
 }
 
-@media screen and (max-width: 1200px) {
-    .collection_box {
-        width: 90%;
-        grid-template-columns: repeat(2, 1fr);
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
 
-@media screen and (max-width: 768px) {
-    .collection_title {
+@keyframes lineWidth {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+    to {
+        width: 80px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1280px) {
+    .collection_title, 
+    .collection_box {
         width: 90%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .collection {
+        padding: 4rem 0;
+    }
+    
+    .collection_title {
+        margin-bottom: 3rem;
     }
     
     .collection_title h2 {
         font-size: 2.2rem;
     }
     
-    .collection_title p {
-        font-size: 1rem;
+    .collections_btn button {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .collection_box {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .collection_title h2 {
+        font-size: 2rem;
     }
 }
 
@@ -246,11 +339,30 @@
         padding: 3rem 0;
     }
     
-    .collection_box {
-        grid-template-columns: 1fr;
+    .collection_title {
+        margin-bottom: 2rem;
     }
     
     .collection_title h2 {
         font-size: 1.8rem;
+    }
+    
+    .collection_title h2::after {
+        width: 60px;
+    }
+    
+    .collections_btn {
+        gap: 0.5rem;
+    }
+    
+    .collections_btn button {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        flex: 1 1 calc(50% - 0.5rem);
+    }
+    
+    .collection_box {
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 } 

@@ -1,0 +1,216 @@
+.daysComponent {
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    background-color: var(--bg-primary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    overflow: hidden;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.daysComponent:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.daysComponent_box {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.daysComponent_box_img {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+}
+
+.daysComponent_box_img_img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.daysComponent:hover .daysComponent_box_img_img {
+    transform: scale(1.05);
+}
+
+.daysComponent_box_profile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 80px;
+    width: 100%;
+    z-index: 1;
+}
+
+.daysComponent_box_img_1,
+.daysComponent_box_img_2,
+.daysComponent_box_img_3 {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50%;
+    border: 2px solid var(--bg-primary);
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.daysComponent_box_img_1 {
+    transform: translateX(20px);
+    z-index: 3;
+}
+
+.daysComponent_box_img_2 {
+    z-index: 2;
+}
+
+.daysComponent_box_img_3 {
+    transform: translateX(-20px);
+    z-index: 1;
+}
+
+.daysComponent:hover .daysComponent_box_img_1,
+.daysComponent:hover .daysComponent_box_img_2,
+.daysComponent:hover .daysComponent_box_img_3 {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.daysComponent:hover .daysComponent_box_img_1 {
+    transform: translateX(20px) translateY(-5px);
+}
+
+.daysComponent:hover .daysComponent_box_img_3 {
+    transform: translateX(-20px) translateY(-5px);
+}
+
+.daysComponent_box_title {
+    padding: 1.5rem;
+    background-color: var(--bg-primary);
+}
+
+.daysComponent_box_title h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.daysComponent_box_title_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.daysComponent_box_title_info_profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.daysComponent_box_title_info_profile_img {
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.daysComponent:hover .daysComponent_box_title_info_profile_img {
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.daysComponent_box_title_info_profile p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.daysComponent_box_title_info_profile span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.daysComponent_box_title_info_profile span small {
+    color: var(--primary-color);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.daysComponent_box_title_info_profile small {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+/* Animation for initial load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Staggered animation for cards */
+.daysComponent:nth-child(2) { animation-delay: 0.1s; }
+.daysComponent:nth-child(3) { animation-delay: 0.2s; }
+.daysComponent:nth-child(4) { animation-delay: 0.3s; }
+.daysComponent:nth-child(5) { animation-delay: 0.4s; }
+.daysComponent:nth-child(6) { animation-delay: 0.5s; }
+.daysComponent:nth-child(7) { animation-delay: 0.6s; }
+.daysComponent:nth-child(8) { animation-delay: 0.7s; }
+
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .daysComponent_box_title h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .daysComponent_box_img {
+        height: 200px;
+    }
+    
+    .daysComponent_box_title {
+        padding: 1.2rem;
+    }
+    
+    .daysComponent_box_title h2 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 35em) {
+    .daysComponent_box_img {
+        height: 180px;
+    }
+    
+    .daysComponent_box_title {
+        padding: 1rem;
+    }
+    
+    .daysComponent_box_title h2 {
+        font-size: 1rem;
+    }
+    
+    .daysComponent_box_title_info_profile p,
+    .daysComponent_box_title_info_profile span {
+        font-size: 0.8rem;
+    }
+}
