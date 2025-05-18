@@ -1,0 +1,106 @@
+.audioPlayer {
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(33, 129, 226, 0.08);
+    transition: all 0.3s ease;
+    padding: 1.2rem 1rem 1rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.audioPlayer_box {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.audioPlayer_box_img {
+    border-radius: 10px;
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(33, 129, 226, 0.08);
+}
+
+.audioPlayer_box_info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.audioPlayer_box_info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.audioPlayer_box_info_box {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.audioPlayer_box_info_box_price small {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.audioPlayer_box_info_box_price p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 0.2rem 0 0 0;
+}
+
+.audioPlayer_box_playBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 2px 8px rgba(33, 129, 226, 0.12);
+}
+
+.audioPlayer_box_playBtn:hover {
+    background: var(--primary-dark);
+    transform: scale(1.08);
+}
+
+@media screen and (max-width: 900px) {
+    .audioPlayer {
+        padding: 0.8rem 0.5rem 0.5rem 0.5rem;
+    }
+    .audioPlayer_box_img {
+        width: 45px !important;
+        height: 45px !important;
+    }
+    .audioPlayer_box_info h4 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .audioPlayer {
+        padding: 0.5rem 0.2rem 0.2rem 0.2rem;
+    }
+    .audioPlayer_box_img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    .audioPlayer_box_info h4 {
+        font-size: 0.9rem;
+    }
+    .audioPlayer_box_info_box_price p {
+        font-size: 0.9rem;
+    }
+}

@@ -2,6 +2,7 @@ import React from "react";
 import Style from "../styles/index.module.css";
 import Subscribe from "../components/Subscribe/Subscribe";
 import {
+  AudioLive,
   BigNFTSlider,
   Category,
   Collection,
@@ -18,7 +19,11 @@ const Home = () => {
       <HeroSection />
       <Service />
       <BigNFTSlider />
-      
+      <Title
+        heading={"Latest Audio Collection"}
+        paragraph={"Discover the most outstanding NFTs in all topics of life"}
+      />
+      <AudioLive/>
       <FollowerTab />
       <Title
         heading={"New Collection"}

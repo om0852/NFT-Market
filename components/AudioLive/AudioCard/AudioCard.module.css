@@ -1,0 +1,199 @@
+.audioCard {
+    width: 100%;
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    transition: all 0.3s ease;
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.audioCard_box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.audioCard_box_like_time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.audioCard_box_like {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+}
+
+.audioCard_box_like_icon {
+    color: #ff3c78;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.audioCard_box_like_icon_unlike {
+    color: var(--text-secondary);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.audioCard_box_like:hover {
+    color: #ff3c78;
+    transform: scale(1.1);
+}
+
+.audioCard_box_like span {
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.audioCard_box_time {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.audioCard_box_like_time_remaing small {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.audioCard_box_like_time_remaing h5 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin: 0.2rem 0 0 0;
+    font-weight: 600;
+}
+
+.audioCard_box_player {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.audioCard_box_musicPlayer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(33, 129, 226, 0.15);
+    position: relative;
+}
+
+.audioCard_box_musicPlayer_icon {
+    color: #fff;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.audioCard_box_musicPlayer:hover {
+    background: var(--primary-dark);
+    transform: scale(1.08);
+}
+
+.audioCard_box_details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.audioCard_box_details_info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.audioCard_box_details_info_price small {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.audioCard_box_details_info_price p {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0.2rem 0 0 0;
+}
+
+.audioCard_box_details_stock small {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.audioCard_box_img {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(33, 129, 226, 0.08);
+}
+
+.audioCard_box_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+@media screen and (max-width: 900px) {
+    .audioCard {
+        padding: 1.2rem 0.7rem 0.7rem 0.7rem;
+    }
+    .audioCard_box_musicPlayer {
+        width: 50px;
+        height: 50px;
+    }
+    .audioCard_box_img {
+        width: 45px;
+        height: 45px;
+        top: 1rem;
+        right: 1rem;
+    }
+    .audioCard_box_details_info h4 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .audioCard {
+        padding: 0.7rem 0.2rem 0.2rem 0.2rem;
+    }
+    .audioCard_box_musicPlayer {
+        width: 40px;
+        height: 40px;
+    }
+    .audioCard_box_img {
+        width: 35px;
+        height: 35px;
+        top: 0.7rem;
+        right: 0.7rem;
+    }
+    .audioCard_box_details_info h4 {
+        font-size: 0.9rem;
+    }
+    .audioCard_box_details_info_price p {
+        font-size: 1rem;
+    }
+}
