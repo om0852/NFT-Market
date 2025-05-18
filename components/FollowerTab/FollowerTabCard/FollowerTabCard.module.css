@@ -1,0 +1,209 @@
+.followerTabCard {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    padding: 1.5rem 1rem 1rem 1rem;
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.followerTabCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.followerTabCard_rank {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1rem;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 2px 8px rgba(33, 129, 226, 0.08);
+}
+
+.followerTabCard_rank span {
+    font-size: 1.2rem;
+}
+
+.FollowerTabCard_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
+
+.FollowerTabCard_box_img {
+    width: 100%;
+    height: 120px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.FollowerTabCard_box_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.followerTabCard:hover .FollowerTabCard_box_img img {
+    transform: scale(1.05);
+}
+
+.followerTabCard_box_profile {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.followerTabCard_box_profile_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.followerTabCard:hover .followerTabCard_box_profile_img {
+    transform: scale(1.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.FollowerTabCard_box_info {
+    width: 100%;
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.FollowerTabCard_box_info_name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.FollowerTabCard_box_info_name h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.FollowerTabCard_box_info_name h4 span {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.FollowerTabCard_box_info_name p {
+    font-size: 0.95rem;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin: 0.5rem 0 0 0;
+}
+
+.FollowerTabCard_box_info_following {
+    margin-top: 1rem;
+}
+
+.FollowerTabCard_box_info_following a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    background: var(--bg-secondary);
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.FollowerTabCard_box_info_following a:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(33, 129, 226, 0.2);
+}
+
+.FollowerTabCard_box_info_following a span {
+    font-size: 1.1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 900px) {
+    .followerTabCard {
+        padding: 1rem 0.5rem 0.5rem 0.5rem;
+    }
+    .FollowerTabCard_box_img {
+        height: 90px;
+    }
+    .followerTabCard_box_profile {
+        width: 40px;
+        height: 40px;
+        top: 70px;
+    }
+    .FollowerTabCard_box_info_name h4 {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .followerTabCard {
+        padding: 0.7rem 0.2rem 0.2rem 0.2rem;
+    }
+    .FollowerTabCard_box_img {
+        height: 70px;
+    }
+    .followerTabCard_box_profile {
+        width: 30px;
+        height: 30px;
+        top: 50px;
+    }
+    .FollowerTabCard_box_info {
+        margin-top: 1.5rem;
+    }
+    .FollowerTabCard_box_info_name h4 {
+        font-size: 0.9rem;
+    }
+    .FollowerTabCard_box_info_following a {
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+}
