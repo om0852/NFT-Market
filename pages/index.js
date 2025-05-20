@@ -11,6 +11,7 @@ import {
   HeroSection,
   NFTCard,
   Service,
+  Slider,
   Title,
 } from "../components/component_index";
 const Home = () => {
@@ -25,6 +26,12 @@ const Home = () => {
       />
       <AudioLive/>
       <FollowerTab />
+      <Title
+        heading={"Explore NFTs Video"}
+        paragraph={"Click on to play video"}
+      />
+
+      <Slider/>
       <Title
         heading={"New Collection"}
         paragraph={"Discover the most outstanding NFTs in all topics of life"}
