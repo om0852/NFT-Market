@@ -1,0 +1,160 @@
+.errorPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
+  padding: 2rem;
+}
+
+.errorPage_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.errorPage_box_left {
+  flex: 1;
+}
+
+.errorPage_box_left_img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  animation: float 6s ease-in-out infinite;
+}
+
+.errorPage_box_left_img_img {
+  object-fit: contain;
+}
+
+.errorPage_box_right {
+  flex: 1;
+}
+
+.errorPage_box_right_box {
+  text-align: left;
+}
+
+.errorPage_box_right_box h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.errorPage_box_right_box_para {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.errorPage_box_right_box_icon {
+  font-size: 2rem;
+  color: #ff6b6b;
+}
+
+.errorPage_box_right_box_para p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.errorPage_box_right_box_search {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.errorPage_box_right_box_search input {
+  width: 100%;
+  padding: 1rem 3rem 1rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.errorPage_box_right_box_search_icon {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.errorPage_box_right_box_search_icon:hover {
+  color: #ff6b6b;
+}
+
+.errorPage_box_right_box_btn {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .errorPage_box {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .errorPage_box_left_img {
+    height: 300px;
+  }
+
+  .errorPage_box_right_box h1 {
+    font-size: 4rem;
+  }
+
+  .errorPage_box_right_box_para p {
+    font-size: 1rem;
+  }
+}
+
+/* Hover Effects */
+.errorPage_box_right_box_search input:focus {
+  outline: none;
+  border-color: #ff6b6b;
+  box-shadow: 0 0 10px rgba(255, 107, 107, 0.2);
+}
+
+/* Glass Morphism Effect */
+.errorPage_box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  background: linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(255, 142, 142, 0.1));
+  z-index: -1;
+} 
