@@ -20,7 +20,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ### Contact
 For any inquiries regarding this project, please contact:
 - GitHub: [om0852](https://github.com/om0852)
-- Email: [salunkeom474@gmail.com]
+- Email: [Your Email Address]
 
 ## Project Description
 A modern NFT marketplace built with Next.js, featuring:
