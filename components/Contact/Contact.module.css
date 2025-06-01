@@ -1,0 +1,204 @@
+.contact_section {
+    width: 100%;
+    min-height: 80vh;
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--main-bg-color) 0%, rgba(245, 248, 250, 0.7) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    background: var(--bg-primary);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(33, 129, 226, 0.08);
+    padding: 3rem 2rem;
+    align-items: center;
+    animation: fadeIn 0.7s ease;
+}
+
+.contact_info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 2rem;
+}
+
+.contact_info h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact_info p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.contact_details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.contact_details a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.contact_details a:hover {
+    color: var(--primary-dark);
+}
+
+.contact_socials {
+    display: flex;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.contact_socials a {
+    font-size: 1.7rem;
+    color: var(--text-secondary);
+    background: rgba(33, 129, 226, 0.05);
+    border-radius: 50%;
+    padding: 0.6rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact_socials a:hover {
+    background: var(--primary-color);
+    color: #fff;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(33, 129, 226, 0.15);
+}
+
+.contact_form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    background: var(--bg-secondary);
+    border-radius: 16px;
+    padding: 2rem 2rem 1.5rem 2rem;
+    box-shadow: 0 4px 16px rgba(33, 129, 226, 0.05);
+    animation: slideUp 0.7s ease;
+}
+
+.contact_form h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.contact_form input,
+.contact_form textarea {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(33, 129, 226, 0.1);
+    background: #fff;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--text-primary);
+    transition: all 0.3s;
+    outline: none;
+    resize: none;
+}
+
+.contact_form input:focus,
+.contact_form textarea:focus {
+    border-color: var(--primary-color);
+    background: rgba(33, 129, 226, 0.04);
+    box-shadow: 0 2px 8px rgba(33, 129, 226, 0.08);
+}
+
+.contact_btn {
+    background: linear-gradient(103.91deg, #2181e2 21.01%, #42a0ff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(33, 129, 226, 0.15);
+    margin-top: 0.5rem;
+}
+
+.contact_btn:hover {
+    background: linear-gradient(103.91deg, #42a0ff 21.01%, #2181e2 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(33, 129, 226, 0.18);
+}
+
+.contact_success {
+    margin-top: 1rem;
+    color: #2181e2;
+    background: rgba(33, 129, 226, 0.08);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 1200px) {
+    .contact_container {
+        width: 95%;
+        gap: 2rem;
+        padding: 2rem 1rem;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .contact_container {
+        grid-template-columns: 1fr;
+        padding: 2rem 0.5rem;
+    }
+    .contact_info {
+        padding-right: 0;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contact_section {
+        padding: 2rem 0;
+    }
+    .contact_container {
+        width: 100%;
+        padding: 1rem 0.2rem;
+    }
+    .contact_form {
+        padding: 1rem;
+    }
+    .contact_info h2 {
+        font-size: 1.3rem;
+    }
+    .contact_form h3 {
+        font-size: 1.1rem;
+    }
+} 
