@@ -1,0 +1,119 @@
+/* Slider Section Styles */
+
+.slider {
+    width: 100%;
+    padding: 4rem 0;
+    position: relative;
+    background: #f9fbff;
+    overflow: hidden;
+}
+
+.slider_box {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Heading */
+.slider_box > h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- Description + Controls --- */
+.slider_box_button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.slider_box_button p {
+    font-size: 1rem;
+    color: #666;
+    margin: 0;
+}
+
+.slider_box_button_btn {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.slider_box_button_btn_icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #2181e2;
+    font-size: 1.4rem;
+}
+
+.slider_box_button_btn_icon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* --- Draggable Items Container --- */
+.slider_box_items {
+    width: 100%;
+    overflow-x: hidden; /* hide scrollbar */
+    cursor: grab;
+}
+
+.slider_box_item {
+    display: flex;
+    gap: 2rem;
+}
+
+/* Hide scrollbar for WebKit */
+.slider_box_items::-webkit-scrollbar {
+    display: none;
+}
+
+/* Optional: active grabbing cursor */
+.slider_box_items:active {
+    cursor: grabbing;
+}
+
+@media screen and (max-width: 900px) {
+    .slider_box > h2 {
+        font-size: 2rem;
+    }
+    .slider_box_button {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .slider_box_button_btn {
+        align-self: center;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .slider {
+        padding: 3rem 0;
+    }
+    .slider_box > h2 {
+        font-size: 1.75rem;
+    }
+    .slider_box_button p {
+        font-size: 0.95rem;
+    }
+    .slider_box_button_btn_icon {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+}

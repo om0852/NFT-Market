@@ -4,6 +4,7 @@ import Subscribe from "../components/Subscribe/Subscribe";
 import {
   AudioLive,
   BigNFTSlider,
+  Brand,
   Category,
   Collection,
   Filter,
@@ -13,6 +14,7 @@ import {
   Service,
   Slider,
   Title,
+  Video,
 } from "../components/component_index";
 const Home = () => {
   return (
@@ -52,6 +54,8 @@ const Home = () => {
       />
       <Category />
       <Subscribe />
+      <Brand/>
+      <Video/>
     </div>
   );
 };
