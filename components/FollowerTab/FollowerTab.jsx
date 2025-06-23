@@ -4,35 +4,35 @@ import {
   RiUserUnfollowFill,
   RiAwardLine,
 } from "react-icons/ri";
+import images from "../../img/index"
 import Style from "./FollowerTab.module.css";
 import FollowerTabCard from "./FollowerTabCard/FollowerTabCard";
 const FollowerTab = () => {
-  const CardArray = [1, 2, 3, 4, 5];
-  const FollowingArray = new Array().fill(0);
+  const CardArray = [{ background: images.creatorbackground1, user: images.user1 }, { background: images.creatorbackground2, user: images.user2 }, { background: images.creatorbackground3, user: images.user3 }, { background: images.creatorbackground4, user: images.user4 }, { background: images.creatorbackground5, user: images.user5 }, { background: images.creatorbackground6, user: images.user6 }, { background: images.creatorbackground7, user: images.user7 }, { background: images.creatorbackground8, user: images.user8 }, { background: images.creatorbackground9, user: images.user9 }, { background: images.creatorbackground10, user: images.user10 }]
   const [popular, setPopular] = useState(true);
   const [following, setFollowing] = useState(false);
   const [news, setNews] = useState(false);
-const openPopular= ()=>{
-  if(!popular){
-    setPopular(true);
-    setNews(false);
-    setFollowing(false)
+  const openPopular = () => {
+    if (!popular) {
+      setPopular(true);
+      setNews(false);
+      setFollowing(false)
+    }
   }
-}
-const openFollower= ()=>{
-  if(!following){
-    setPopular(false);
-    setNews(false);
-    setFollowing(true)
+  const openFollower = () => {
+    if (!following) {
+      setPopular(false);
+      setNews(false);
+      setFollowing(true)
+    }
   }
-}
-const openNews= ()=>{
-  if(!news){
-    setPopular(false);
-    setNews(true);
-    setFollowing(false)
+  const openNews = () => {
+    if (!news) {
+      setPopular(false);
+      setNews(true);
+      setFollowing(false)
+    }
   }
-}
 
   return (
     <div className={Style.followerTab}>
@@ -64,7 +64,7 @@ const openNews= ()=>{
       )}
       {following && (
         <div className={Style.followerTab_box}>
-          {CardArray.map((el, i) =>( 
+          {CardArray.map((el, i) => (
             <FollowerTabCard key={i + 1} i={i} el={el} />
           ))}
         </div>
@@ -72,7 +72,7 @@ const openNews= ()=>{
       {news && (
         <div className={Style.followerTab_box}>
           {CardArray.map((el, i) => {
-            return(
+            return (
               <FollowerTabCard key={i + 1} i={i} el={el} />
             )
           })}

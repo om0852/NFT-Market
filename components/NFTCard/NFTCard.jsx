@@ -6,11 +6,12 @@ import Image from "next/image";
 import images from "../../img/index";
 
 const NFTCard = () => {
-  const featureArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const featureArray = [{ background: images.nft_image_1, user: images.user1 }, { background: images.nft_image_2, user: images.user2 }, { background: images.nft_image_3, user: images.user3 }, { background: images.nft_image_1, user: images.user1 }, { background: images.nft_image_2, user: images.user2 }, { background: images.nft_image_3, user: images.user3 }]
+
   const [like, setLike] = useState(true);
 
-  const likeNft = ()=>{
-    setLike(prev=>!prev);
+  const likeNft = () => {
+    setLike(prev => !prev);
   }
   return (
     <div className={Style.NFTCard}>
@@ -18,7 +19,7 @@ const NFTCard = () => {
         <div className={Style.NFTCard_box} key={i + 1}>
           <div className={Style.NFTCard_box_img}>
             <Image
-              src={images.nft_image_1}
+              src={el.background}
               alt="NFT images"
               width={600}
               height={600}
@@ -68,7 +69,7 @@ const NFTCard = () => {
               </div>
             </div>
             <div className={Style.NFTCard_box_update_details_category}>
-                <BsImages/>
+              <BsImages />
 
             </div>
           </div>

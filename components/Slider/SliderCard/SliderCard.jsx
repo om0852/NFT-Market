@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Style from "./SliderCard.module.css";
-import images from "../../../img/index";
 import LikeProfile from "../../LikeProfile/LikeProfile";
 import Image from "next/image";
 
-const SliderCard = () => {
+const SliderCard = ({el,i}) => {
   return (
     <motion.div className={Style.sliderCard}>
       <div className={Style.sliderCard_box}>
         <motion.div className={Style.sliderCard_box_img}>
           <Image
-            src={images.creatorbackground1}
+            src={el.background}
             alt="Slider Profile"
             width={500}
             height={300}
