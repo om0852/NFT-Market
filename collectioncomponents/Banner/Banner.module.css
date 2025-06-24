@@ -1,0 +1,32 @@
+.banner{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.banner_img{
+  width: 100%;
+  display: block;
+}
+
+.banner__img_mobile{
+  display: none;
+}
+
+.banner_img img,
+.banner__img_mobile img{
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px){
+  .banner_img{
+    display: none;
+  }
+
+  .banner__img_mobile{
+    display: block;
+  }
+}
