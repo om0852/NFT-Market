@@ -9,7 +9,7 @@ const HeroSection = () => {
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
-        <div className={Style.heroSection_box_left}>
+      <div className={Style.heroSection_box_left}>
           <h1>
             Discover, collect, and sell 
             <span>extraordinary NFTs</span>
@@ -36,9 +36,9 @@ const HeroSection = () => {
               <p>Artists</p>
             </div>
           </div>
-        </div>
+      </div>
 
-        <div className={Style.heroSection_box_right}>
+      <div className={Style.heroSection_box_right}>
           <div className={Style.heroSection_box_right_img}>
             <div className={Style.heroSection_box_right_img_1}>
               <Image src={images.hero} alt="Hero NFT 1" width={600} height={600} />
@@ -55,5 +55,5 @@ const HeroSection = () => {
     </div>
   )
 }
-
+ 
 export default HeroSection

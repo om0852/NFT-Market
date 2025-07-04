@@ -4,7 +4,7 @@ import Style from "../styles/author.module.css";
 import { Banner, NFTCard2 } from "../collectionPage/index"
 import { Brand, Title } from "../components/component_index"
 import images from "../img/index"
-import { AuthorProfileCard, AuthorTabs } from "../authorPage/author_index";
+import { AuthorProfileCard, AuthorTabs ,AuthorNFTCardBox} from "../authorPage/author_index";
 import FollowerTabCard from "../components/FollowerTab/FollowerTabCard/FollowerTabCard";
 // import {AuthorProfileCard,AuthorTaps,TabCard} from ""
 // import 
@@ -30,7 +30,8 @@ const AuthorPage = () => {
         <div className={Style.Banner}>
             <Banner bannerImage={images.creatorbackground10} />
             <AuthorProfileCard />
-            <AuthorTabs collectiable={setCollectiables} created={setCreated} like={setLike} following={setFollowing} follower={setFollower} />
+            <AuthorTabs setCollectiable={setCollectiables} setCreated={setCreated} setLike={setLike} setFollowing={setFollowing} setFollower={setFollower} />
+            <AuthorNFTCardBox collectiable={collectiable} created={created} like={like} follower={follower} following={following} />
             <Title heading={"Popular Creators"} paragraph={"Click on music icon and enjoy NFT music or audio"} />
             {
                 popularArray.map((el, i) => (
