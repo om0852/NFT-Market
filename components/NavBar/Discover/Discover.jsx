@@ -21,7 +21,7 @@ const Discover = () => {
   },
   {
     name:"Search",
-    link:"search",
+    link:"searchpage",
     icon: <MdOutlineSearch className={Style.discover_icon} />
   },
   {

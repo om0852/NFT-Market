@@ -1,0 +1,58 @@
+.NFTDetailsPage {
+  padding: 2rem;
+  background: var(--bg-primary);
+}
+
+.NFTDetailsPage_box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.NFTDetailsPage_box_left {
+  position: relative;
+}
+
+.NFTDetailsPage_box_right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .NFTDetailsPage {
+    padding: 1.5rem;
+  }
+  
+  .NFTDetailsPage_box {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .NFTDetailsPage {
+    padding: 1rem;
+  }
+  
+  .NFTDetailsPage_box {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .NFTDetailsPage_box_right {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .NFTDetailsPage {
+    padding: 0.75rem;
+  }
+  
+  .NFTDetailsPage_box {
+    gap: 1rem;
+  }
+}
