@@ -26,7 +26,7 @@ const Discover = () => {
   },
   {
     name:"Author Profile",
-    link:"author-profile",
+    link:"author",
     icon: <MdPerson className={Style.discover_icon} />
   },
   {
@@ -36,12 +36,12 @@ const Discover = () => {
   },
   {
     name:"Account Setting",
-    link:"account-setting",
+    link:"account",
     icon: <MdOutlineSettings className={Style.discover_icon} />
   },
   {
     name:"Connect Wallet",
-    link:"connect-wallet",
+    link:"connectWallet",
     icon: <MdOutlineAccountBalanceWallet className={Style.discover_icon} />
   },
   {

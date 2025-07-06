@@ -1,0 +1,122 @@
+.Form {
+    width: 100%;
+    background: #fafbfc;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    padding: 32px 24px;
+  }
+  
+  .Form_box {
+    width: 100%;
+  }
+  
+  .Form_box_input,
+  .Form_box_input_social > .Form_box_input {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .Form_box_input label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .Form_box_input input,
+  .Form_box_input textarea {
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border 0.2s;
+    outline: none;
+  }
+  
+  .Form_box_input input:focus,
+  .Form_box_input textarea:focus {
+    border-color: #4f46e5;
+  }
+  
+  .Form_box_input textarea {
+    resize: vertical;
+    min-height: 80px;
+    font-family: inherit;
+  }
+  
+  .Form_box_input_box {
+    display: flex;
+    align-items: center;
+    background: #f3f4f6;
+    border-radius: 8px;
+    padding: 0 8px;
+    border: 1.5px solid #e0e0e0;
+    transition: border 0.2s;
+  }
+  
+  .Form_box_input_box:focus-within {
+    border-color: #4f46e5;
+  }
+  
+  .Form_box_input_box_icon {
+    color: #4f46e5;
+    font-size: 1.3rem;
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Form_box_input_box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    flex: 1;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+  
+  .Form_box_input_social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .Form_box_btn {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 18px;
+  }
+  
+  .button {
+    background: linear-gradient(90deg, #6366f1 0%, #4f46e5 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(99,102,241,0.08);
+  }
+  
+  .button:hover {
+    background: linear-gradient(90deg, #4f46e5 0%, #6366f1 100%);
+    box-shadow: 0 4px 16px rgba(99,102,241,0.12);
+  }
+  
+  @media (max-width: 600px) {
+    .Form {
+      padding: 18px 8px;
+    }
+    .Form_box_btn {
+      justify-content: center;
+    }
+    .Form_box_input_social {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }

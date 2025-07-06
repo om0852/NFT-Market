@@ -1,0 +1,98 @@
+.connectWallet {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--main-bg-color);
+    padding: 2rem 1rem;
+  }
+  
+  .connectWallet_box {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.08);
+    padding: 2.5rem 2rem 2rem 2rem;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn var(--transition-normal) forwards;
+  }
+  
+  .connectWallet_box h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+  }
+  
+  .connectWallet_box_para {
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .connectWallet_box_provider {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+  }
+  
+  .connectWallet_box_provider_item {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: #f7f7f7;
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: box-shadow 0.2s, border 0.2s, background 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  
+  .connectWallet_box_provider_item:hover {
+    border-color: var(--primary-color);
+    background: #f0f8ff;
+  }
+  
+  .connectWallet_box_provider_item_img {
+    border-radius: 8px;
+    background: #fff;
+    object-fit: contain;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+  
+  .connectWallet_box_provider_item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #222;
+    margin: 0;
+  }
+  
+  .active {
+    border-color: var(--primary-color);
+    background: #e6f0ff;
+    box-shadow: 0 4px 16px rgba(33,129,226,0.08);
+  }
+  
+  @media (max-width: 600px) {
+    .connectWallet_box {
+      padding: 1.5rem 0.5rem 1rem 0.5rem;
+      max-width: 98vw;
+    }
+    .connectWallet_box_provider_item {
+      padding: 0.8rem 0.7rem;
+      gap: 0.7rem;
+    }
+    .connectWallet_box h1 {
+      font-size: 1.3rem;
+    }
+    .connectWallet_box_para {
+      font-size: 1rem;
+    }
+  }
+  
