@@ -1,0 +1,249 @@
+.aboutUs {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  background: #0f0f23;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.aboutus_box {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero Section */
+.aboutus_box_hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+  gap: 4rem;
+}
+
+.aboutus_box_hero_left {
+  flex: 1;
+  text-align: left;
+}
+
+.aboutus_box_hero_left h1 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.aboutus_box_hero_left p {
+  font-size: 1.2rem;
+  color: #b8b8d4;
+  line-height: 1.8;
+  max-width: 90%;
+}
+
+.aboutus_box_hero_right {
+  flex: 1;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.aboutus_box_hero_right:hover {
+  transform: translateY(-10px);
+}
+
+.aboutus_box_hero_right img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+/* Section Titles */
+.aboutus_box_title {
+  text-align: center;
+  margin: 6rem 0 3rem;
+}
+
+.aboutus_box_title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.aboutus_box_title h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  border-radius: 2px;
+}
+
+.aboutus_box_title p {
+  color: #b8b8d4;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Founder Section */
+.aboutus_box_founder_box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.aboutus_box_founder_box_img {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aboutus_box_founder_box_img:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.aboutus_box_founder_box_img_img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+  border: 5px solid rgba(124, 58, 237, 0.3);
+}
+
+.aboutus_box_founder_box_img h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.aboutus_box_founder_box_img p {
+  color: #b8b8d4;
+  font-size: 1rem;
+}
+
+/* Facts Section */
+.aboutus_box_facts_box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.aboutus_box_facts_box_info {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.aboutus_box_facts_box_info:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  border-color: rgba(124, 58, 237, 0.3);
+}
+
+.aboutus_box_facts_box_info h3 {
+  font-size: 2.5rem;
+  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.aboutus_box_facts_box_info p {
+  color: #b8b8d4;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Background Elements */
+.aboutUs::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
+  pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .aboutus_box_hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .aboutus_box_hero_left p {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .aboutus_box_hero_right {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUs {
+    padding: 3rem 1.5rem;
+  }
+  
+  .aboutus_box_hero_left h1 {
+    font-size: 2.8rem;
+  }
+  
+  .aboutus_box_title h2 {
+    font-size: 2rem;
+  }
+  
+  .aboutus_box_founder_box,
+  .aboutus_box_facts_box {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutus_box_hero_left h1 {
+    font-size: 2.2rem;
+  }
+  
+  .aboutus_box_title h2 {
+    font-size: 1.8rem;
+  }
+  
+  .aboutus_box_founder_box_img_img {
+    width: 120px;
+    height: 120px;
+  }
+}
