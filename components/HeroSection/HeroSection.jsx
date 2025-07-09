@@ -1,25 +1,31 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 
 import Style from "./HeroSection.module.css"
 import Image from 'next/image'
 import images from "../../img/index";
 import { Button } from '../component_index';
+import { NFTMarketplaceContext } from '../../context/NFTMarketplaceContext';
 
 const HeroSection = () => {
+
+  const { name, checkContract } = useContext(NFTMarketplaceContext);
+  // useEffect(() => {
+  //   checkContract();
+  // }, [])
   return (
     <div className={Style.heroSection}>
       <div className={Style.heroSection_box}>
-      <div className={Style.heroSection_box_left}>
+        <div className={Style.heroSection_box_left}>
           <h1>
-            Discover, collect, and sell 
+            Discover, collect, and sell
             <span>extraordinary NFTs</span>
           </h1>
           <p>
             Discover the most outstanding NFTs in all topics of life. Create your NFTs and sell them
           </p>
           <div className={Style.heroSection_box_left_btn}>
-            <Button btnName="Create" handleClick={() => {}} />
-            <Button btnName="Discover" handleClick={() => {}} />
+            <Button btnName="Create" handleClick={() => { }} />
+            <Button btnName="Discover" handleClick={() => { }} />
           </div>
 
           <div className={Style.heroSection_stats}>
@@ -36,9 +42,9 @@ const HeroSection = () => {
               <p>Artists</p>
             </div>
           </div>
-      </div>
+        </div>
 
-      <div className={Style.heroSection_box_right}>
+        <div className={Style.heroSection_box_right}>
           <div className={Style.heroSection_box_right_img}>
             <div className={Style.heroSection_box_right_img_1}>
               <Image src={images.hero} alt="Hero NFT 1" width={600} height={600} />
@@ -55,5 +61,5 @@ const HeroSection = () => {
     </div>
   )
 }
- 
+
 export default HeroSection
