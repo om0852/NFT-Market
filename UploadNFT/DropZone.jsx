@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
@@ -15,10 +16,14 @@ const DropZone = ({
   properties,
   catgeory,
   image,
+  setImage,
+  uploadToIPFS
 }) => {
   const [fileUrl, setFileUrl] = useState(null);
   const onDrop = useCallback(async (acceptedFile) => {
-    setFileUrl(acceptedFile[0]);
+    const url = uploadToIPFS(acceptedFile[0]);
+    setImage(url);
+    setFileUrl(url);
   });
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
@@ -32,7 +37,7 @@ const DropZone = ({
         <div className={Style.DropZone_box_input}>
           <p>{title}</p>
           <div className={Style.DropZone_box_input_img}>
-            <Image src={image} alt="upload" width={100} height={100}  className={DropZone_box_input_img_img}/>
+            <Image src={images.update} alt="upload" width={100} height={100}  className={Style.DropZone_box_input_img_img}/>
           </div>
         </div>
       </div>

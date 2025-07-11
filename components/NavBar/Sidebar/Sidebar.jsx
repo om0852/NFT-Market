@@ -16,8 +16,11 @@ import { MdOutlineCreate, MdOutlineAccountBalanceWallet } from "react-icons/md";
 import images from "../../../img/index";
 import Button from "../../Button/Button";
 import Style from "./Sidebar.module.css";
+import { useContext } from "react";
+import { NFTMarketplaceContext } from "../../../context/NFTMarketplaceContext";
 
 const Sidebar = ({ setOpenSideMenu }) => {
+  const { currentAccount, connectWallet } = useContext(NFTMarketplaceContext);
   const [openHelp, setOpenHelp] = useState(false);
   const [openDiscover, setOpenDiscover] = useState(false);
 
@@ -159,16 +162,25 @@ const Sidebar = ({ setOpenSideMenu }) => {
         </div>
       </div>
       <div className={Style.sideBar_button}>
-        <Button 
-          btnName="Create" 
-          icon={<MdOutlineCreate style={{ marginRight: "8px" }} />}
-          handleClick={() => {}}
-        />
-        <Button 
-          btnName="Connect Wallet" 
-          icon={<MdOutlineAccountBalanceWallet style={{ marginRight: "8px" }} />}
-          handleClick={() => {}}
-        />
+        {
+          currentAccount ? (
+            <Button
+              btnName="Create"
+              icon={<MdOutlineCreate style={{ marginRight: "8px" }} />}
+              handleClick={() => { }}
+            />) :
+            (
+            <a 
+             href="/nft-upload"
+             >
+
+            <Button
+              btnName="Connect Wallet"
+              icon={<MdOutlineAccountBalanceWallet style={{ marginRight: "8px" }} />}
+              handleClick={() => { connectWallet() }}
+            />
+              </a>
+            )}
       </div>
     </div>
   );

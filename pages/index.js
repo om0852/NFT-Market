@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+"use client"
+import React, { useContext, useEffect } from "react";
 import Style from "../styles/index.module.css";
 import Subscribe from "../components/Subscribe/Subscribe";
 import {

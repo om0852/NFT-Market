@@ -1,10 +1,10 @@
-import React, { useState, useEffect, useContext } from "react"
+import React, { useState, useEffect, useContext, createContext } from "react"
 import Web3Modal from "web3modal";
 import { ethers } from "ethers";
-import { Router } from "next/router";
+// import { Router } from "next/router";
 import { NFTMarketplaceABI, NFTMarketplaceAddress } from "./constants";
 import axios from "axios";
-import { creare as ipfsHttpClient } from "ipfs-http-client"
+import { create as ipfsHttpClient } from "ipfs-http-client"
 
 
 const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0")
@@ -64,7 +64,7 @@ const connectWallet = async () => {
     }
 }
 
-const uploadToIPFS = async (file) => {
+export const uploadToIPFS = async (file) => {
     try {
         const added = await client.add({ content: file });
         const url = `https://ipfs.infura.io/ipfs/${added.path}`
@@ -74,7 +74,7 @@ const uploadToIPFS = async (file) => {
     }
 }
 
-export const NFTMarketplaceContext = React.createContext();
+export const NFTMarketplaceContext = createContext();
 export const NFTMarketplaceProvider = ({ children }) => {
     const [currentAccount, setCurrentAccount] = useState(null);
     const checkIfWalletConnect = async () => {
