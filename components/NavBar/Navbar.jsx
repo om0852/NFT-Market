@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Style from "./Navbar.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +11,7 @@ import { CgMenuLeft, CgMenuRight } from "react-icons/cg";
 import { Discover, Notification, HelpCenter, Profile, Sidebar } from "./index";
 import { Button } from "../component_index";
 import images from "../../img/index";
+import { NFTMarketplaceContext } from "../../context/NFTMarketplaceContext";
 
 const Navbar = () => {
   const [discover, setDiscover] = useState(false);
@@ -18,6 +19,7 @@ const Navbar = () => {
   const [notification, setNotification] = useState(false);
   const [profile, setProfile] = useState(false);
   const [openSideMenu, setOpenSideMenu] = useState(false);
+
   const openMenu = (e) => {
     const btnText = e.target.innerText;
     if (btnText == "Discover") {
@@ -62,6 +64,10 @@ const Navbar = () => {
   const openSideBar = ()=>{
 setOpenSideMenu((prev)=>!prev);
   }
+
+//smart contract section
+const {currentAccount, connectWallet, createNFT} =useContext(NFTMarketplaceContext)
+
   return (
     <div className={Style.navbar}>
       <div className={Style.navbar_container}>
@@ -113,7 +119,7 @@ setOpenSideMenu((prev)=>!prev);
           </div>
           {/* create button section  */}
           <div className={Style.navbar_container_right_button}>
-            <Button btnName="Create" />
+           {currentAccount ==""?  <Button btnName="Connect" handleClick={()=>connectWallet()} />:<a href="/upload-nft"><Button btnName="Create" handleClick={()=>{}} /></a> }
           </div>
           {/* user profile */}
           <div className={Style.navbar_container_right_profile_box}>
