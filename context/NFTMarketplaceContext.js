@@ -7,13 +7,28 @@ import axios from "axios";
 import { create as ipfsHttpClient } from "ipfs-http-client"
 
 
-const client = ipfsHttpClient("https://ipfs.infura.io:5001/api/v0")
+const subdomain="https://ipfs.infura.io"
+const projectId="3dad29cb57ab4fd997107e6e1b00cdd6"
+const projectSecretKey="oxNMXJEzpUqd4vxZ4ZHY2BS4u2uaLd51U8aQSvUHoMfx79e+IUybEQ";
+const gatewaykey="RSru_pWWiA9xFuOzgBm745In1YlPq1WNZVIUkAocoU4pKDFmvAieaGhBLegoDJE-"
+const accesstoken="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySW5mb3JtYXRpb24iOnsiaWQiOiIwOTViMTg0YS03ZjgxLTRjODItODRlYS1jYzA1YmJjNmE3NTMiLCJlbWFpbCI6InNhbHVua2VvbTQ3NEBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicGluX3BvbGljeSI6eyJyZWdpb25zIjpbeyJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MSwiaWQiOiJGUkExIn0seyJkZXNpcmVkUmVwbGljYXRpb25Db3VudCI6MSwiaWQiOiJOWUMxIn1dLCJ2ZXJzaW9uIjoxfSwibWZhX2VuYWJsZWQiOmZhbHNlLCJzdGF0dXMiOiJBQ1RJVkUifSwiYXV0aGVudGljYXRpb25UeXBlIjoic2NvcGVkS2V5Iiwic2NvcGVkS2V5S2V5IjoiYWFhYjQ2ODk5NjU1ZTMwMmNkYTgiLCJzY29wZWRLZXlTZWNyZXQiOiI3YTU2MGExMTczODY4MTg0NTZhYzA5YzU3MmVlYWExZTU2NDA0ZDkzMmNjZjdhMmFhODQ0MDE0OWQ0ZGMzMzkxIiwiZXhwIjoxNzgzOTI0MTEwfQ.b99Z-akwjYPkZwFt5nw3ALZMSTEQ9jnMK_a79fCzKeY"
+const auth =  `Basic${Buffer.from(`${projectId}:${projectSecretKey}`).toString("base64")}`
+const client = ipfsHttpClient({
+    host:subdomain,
+    port:5001,
+    protocol:"https",
+    headers:{
+        authorization:auth
+    }
+})
 //fetch contract
 
 // const web3Modal = new Web3Modal({
 //     cacheProvider: true,
 //     providerOptions
 //   });
+
+
 const fetchContract = async (signerOrProvider) => {
     if (!signerOrProvider) {
         throw new Error('fetchContract: signerOrProvider is undefined');
@@ -54,7 +69,7 @@ const connectWallet = async () => {
         const accounts = await window.ethereum.request({ method: "eth_accounts" })
         if (accounts.length > 0) {
             setCurrentAccount[accounts[0]]
-            window.location.reload();
+            // window.location.reload();
         }
         else {
             console.log("No Account Found")
@@ -67,7 +82,7 @@ const connectWallet = async () => {
 export const uploadToIPFS = async (file) => {
     try {
         const added = await client.add({ content: file });
-        const url = `https://ipfs.infura.io/ipfs/${added.path}`
+        const url = `${subdomain}/ipfs/${added.path}`
         return url
     } catch (error) {
         console.log("Something went wrong while uploading to IPFS", error)
@@ -85,7 +100,7 @@ export const NFTMarketplaceProvider = ({ children }) => {
             const accounts = await window.ethereum.request({ method: "eth_accounts" })
             if (accounts.length > 0) {
                 setCurrentAccount[accounts[0]]
-                window.location.reload();
+                // window.location.reload();
             }
             else {
                 console.log("No Account Found")

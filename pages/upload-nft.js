@@ -16,7 +16,7 @@ const uploadNFT = () => {
           <h2>Image,video ,audio or 3D model</h2>
         </div>
         <div className={Style.uploadNFT_box_form}>
-          {/* <UploadNFT uploadToIPFS={uploadToIPFS} createNFT={createNFT}/> */}
+          <UploadNFT uploadToIPFS={uploadToIPFS} createNFT={createNFT}/>
         </div>
       </div>
     </div>
@@ -24,3 +24,5 @@ const uploadNFT = () => {
 };
 
 export default uploadNFT;
+
+
